@@ -1,15 +1,9 @@
-import {
-  render,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-} from '@testing-library/react'
-import ProductList from '../../src/components/ProductList'
-import { server } from '../mocks/server'
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
 import { delay, http, HttpResponse } from 'msw'
-import { db } from '../mocks/db'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import ProductList from '../../src/components/ProductList'
 import AllProviders from '../AllProviders'
+import { db } from '../mocks/db'
+import { server } from '../mocks/server'
 
 describe('ProductList', () => {
   const productIds: number[] = []
