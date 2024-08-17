@@ -47,6 +47,7 @@ const ProductForm = ({ product, onSubmit }: Props) => {
       <Box>
         <TextField.Root className="max-w-sm">
           <TextField.Input
+            autoFocus
             aria-label="name"
             placeholder="Name"
             {...register('name')}
@@ -77,7 +78,7 @@ const ProductForm = ({ product, onSubmit }: Props) => {
               defaultValue={product?.categoryId.toString() || ''}
               onValueChange={value => field.onChange(+value)}
             >
-              <Select.Trigger aria-label='Category' placeholder="Category" />
+              <Select.Trigger aria-label="Category" placeholder="Category" />
               <Select.Content>
                 <Select.Group>
                   {categories?.map(category => (
