@@ -124,6 +124,11 @@ describe('ProductForm', () => {
       name: 'a'.repeat(256),
       errorMessage: /255/,
     },
+    // {
+    //   scenario: 'whitespace',
+    //   name: /&nbsp;/,
+    //   errorMessage: /blank/,
+    // },
   ])('should display an error if name is $scenario', async ({ name, errorMessage }) => {
     const { waitForFormToLoad, expectErrorTobeInTheDocument } = renderComponent()
 
